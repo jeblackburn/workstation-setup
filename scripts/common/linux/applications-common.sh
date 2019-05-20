@@ -6,14 +6,14 @@ echo
 echo "Installing applications"
 
 # Utilities
-sudo apt -y install snapd
+# sudo apt -y install snapd
 
-sudo apt-get install -y copyq
+# sudo apt-get install -y copyq
 # sudo apt-get -y install shiftit
-echo
-echo "configure shiftit to select 1/3 screen width, 1/2 screen width and 2/3 screen width:"
-echo "`defaults write org.shiftitapp.ShiftIt multipleActionsCycleWindowSizes YES`"
-echo
+# echo
+# echo "configure shiftit to select 1/3 screen width, 1/2 screen width and 2/3 screen width:"
+# echo "`defaults write org.shiftitapp.ShiftIt multipleActionsCycleWindowSizes YES`"
+# echo
 # sudo apt-get -y install dash
 sudo apt-get -y install postman
 

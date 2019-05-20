@@ -1,10 +1,10 @@
 echo
 echo "Installing Git and associated tools"
 sudo apt-get -y install git
-sudo apt-get -y install git-duet
-sudo apt-get -y install git-pair
-sudo apt-get -y install git-together
-sudo apt-get -y install git-author
+#sudo apt-get -y install git-duet
+#sudo apt-get -y install git-pair
+#sudo apt-get -y install git-together
+#sudo apt-get -y install git-author
 
 echo
 echo "Putting a sample git-pair file in ~/.pairs"
@@ -30,9 +30,3 @@ else
   popd
 fi
 
-# install cred-alert-cli
-os_name=$(uname | awk '{print tolower($1)}')
-curl -o cred-alert-cli \
-  https://s3.amazonaws.com/cred-alert/cli/current-release/cred-alert-cli_${os_name}
-chmod 755 cred-alert-cli
-mv cred-alert-cli /usr/local/bin # <= or other directory in ${PATH}

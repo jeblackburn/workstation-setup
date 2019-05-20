@@ -6,7 +6,7 @@ sudo apt-get update
 
 sudo apt-get -y install cf-cli
 
-sudo wget https://github.com/cloudfoundry/bosh-cli/releases/download/v5.4.0/bosh-cli-5.4.0-linux-amd64
-sudo chmod +x ./bosh-cli-5.4.0-linux-amd64
-sudo mv ./bosh-cli-5.4.0-linux-amd64 /usr/local/bin/bosh
+# sudo wget https://github.com/cloudfoundry/bosh-cli/releases/download/v5.4.0/bosh-cli-5.4.0-linux-amd64
+# sudo chmod +x ./bosh-cli-5.4.0-linux-amd64
+# sudo mv ./bosh-cli-5.4.0-linux-amd64 /usr/local/bin/bosh
 # sudo apt-get -y install bbl

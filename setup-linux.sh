@@ -18,13 +18,6 @@ sudo true;
 clear
 
 MY_DIR="$(dirname "$0")"
-SKIP_ANALYTICS=${SKIP_ANALYTICS:-0}
-if (( SKIP_ANALYTICS == 0 )); then
-    clientID=$(od -vAn -N4 -tx  < /dev/urandom)
-    source ${MY_DIR}/scripts/helpers/google-analytics.sh ${clientID} start $@
-else
-    export HOMEBREW_NO_ANALYTICS=1
-fi
 
 # Note: Homebrew needs to be set up first
 source ${MY_DIR}/scripts/common/linux/configuration-bash.sh
@@ -35,15 +28,13 @@ source ${MY_DIR}/scripts/common/linux/git.sh
 source ${MY_DIR}/scripts/common/git-aliases.sh
 source ${MY_DIR}/scripts/common/linux/cloud-foundry.sh
 source ${MY_DIR}/scripts/common/linux/applications-common.sh
-source ${MY_DIR}/scripts/common/linux/unix.sh
-source ${MY_DIR}/scripts/common/linux/configuration-osx.sh
 source ${MY_DIR}/scripts/common/linux/configurations.sh
 
 # For each command line argument, try executing the corresponding script in opt-in/
 for var in "$@"
 do
     echo "$var"
-    FILE=${MY_DIR}/scripts/opt-in/${var}.sh
+    FILE=${MY_DIR}/scripts/opt-in/linux/${var}.sh
     echo "$FILE"
     if [ -f $FILE ]; then
         source ${FILE}
@@ -53,6 +44,3 @@ do
 done
 
 source ${MY_DIR}/scripts/common/linux/finished.sh
-if (( SKIP_ANALYTICS == 0 )); then
-    source ${MY_DIR}/scripts/helpers/google-analytics.sh ${clientID} finish $@
-fi
