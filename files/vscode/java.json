@@ -1,0 +1,12 @@
+{
+	"Console Log": {
+		"prefix": "sout",
+		"description": "Log to stdout",
+		"body": "System.out.println(\"$1\");"
+	},
+	"Console Log With Var": {
+		"prefix": "soutv",
+		"description": "Log to stdout with a format string",
+		"body": "System.out.println(\"${var} = \", ${var});"
+	}
+}
